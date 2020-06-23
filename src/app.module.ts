@@ -6,6 +6,7 @@ import { AppService } from './app.service';
 import { ConfigModule } from "@nestjs/config"
 import databaseConfig from "./config/database.config";
 import { GraphQLModule } from "@nestjs/graphql"
+import SchoolModule from "./modules/school/school.module"
 
 @Module({
   imports: [
@@ -16,7 +17,8 @@ import { GraphQLModule } from "@nestjs/graphql"
     GraphQLModule.forRoot({
       context: ({ req }) => ({ req }),
       autoSchemaFile: path.join(process.cwd(), 'schema.gql'),
-    })
+    }),
+    SchoolModule,
   ],
   controllers: [AppController],
   providers: [AppService],
