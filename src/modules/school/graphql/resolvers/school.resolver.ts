@@ -10,11 +10,6 @@ export default class SchoolResolver {
   ) {
   }
 
-  @Query(() => Hello)
-  hello(): Hello {
-    return { world: 'Hello World' };
-  }
-
   /**
    * Find a school
    */

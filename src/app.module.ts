@@ -7,6 +7,7 @@ import { ConfigModule } from "@nestjs/config"
 import databaseConfig from "./config/database.config";
 import { GraphQLModule } from "@nestjs/graphql"
 import SchoolModule from "./modules/school/school.module"
+import FacultyModule from "./modules/faculty/faculty.module"
 
 @Module({
   imports: [
@@ -19,6 +20,7 @@ import SchoolModule from "./modules/school/school.module"
       autoSchemaFile: path.join(process.cwd(), 'schema.gql'),
     }),
     SchoolModule,
+    FacultyModule,
   ],
   controllers: [AppController],
   providers: [AppService],
